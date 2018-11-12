@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTF-Gl-CZ4">
+                                <rect key="frame" x="156" y="187" width="37" height="34"/>
+                                <state key="normal" title="播放">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected" title="暂停"/>
+                                <connections>
+                                    <action selector="palySongAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eHb-AI-8zh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLO-a6-4Oc">
+                                <rect key="frame" x="250" y="190" width="46" height="30"/>
+                                <state key="normal" title="下一曲"/>
+                                <connections>
+                                    <action selector="nextSongAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3La-OA-nJD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0p-id-Kug">
+                                <rect key="frame" x="61" y="190" width="46" height="30"/>
+                                <state key="normal" title="上一曲"/>
+                                <connections>
+                                    <action selector="lastSongAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AdR-Dg-Tyv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前模式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdt-J4-5ZX">
+                                <rect key="frame" x="150" y="306" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uTF-Gl-CZ4" firstAttribute="baseline" secondItem="aLO-a6-4Oc" secondAttribute="baseline" id="2K7-ZW-S2P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hdt-J4-5ZX" secondAttribute="trailing" symbolic="YES" id="5jM-fY-hdC"/>
+                            <constraint firstItem="uTF-Gl-CZ4" firstAttribute="baseline" secondItem="b0p-id-Kug" secondAttribute="baseline" id="CRP-Tk-DoP"/>
+                            <constraint firstItem="hdt-J4-5ZX" firstAttribute="top" secondItem="uTF-Gl-CZ4" secondAttribute="bottom" constant="85" id="Ccb-CS-G5O"/>
+                            <constraint firstItem="uTF-Gl-CZ4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="156" id="DLf-L5-eBF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aLO-a6-4Oc" secondAttribute="trailing" constant="79" id="Fhu-Wx-EsB"/>
+                            <constraint firstItem="aLO-a6-4Oc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uTF-Gl-CZ4" secondAttribute="trailing" constant="8" symbolic="YES" id="Ovb-a6-XaJ"/>
+                            <constraint firstItem="uTF-Gl-CZ4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b0p-id-Kug" secondAttribute="trailing" constant="8" symbolic="YES" id="VZK-wl-aca"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hdt-J4-5ZX" secondAttribute="bottom" constant="340" id="fM1-3s-N1z"/>
+                            <constraint firstItem="hdt-J4-5ZX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="gac-yd-MCG"/>
+                            <constraint firstItem="b0p-id-Kug" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="61" id="tru-MC-WmQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="currentMode" destination="hdt-J4-5ZX" id="Xet-ad-ik9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+        </scene>
+    </scenes>
+</document>
