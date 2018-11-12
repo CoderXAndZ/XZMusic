@@ -77,18 +77,22 @@
 - (void)xz_lastSong {
     if (_currentSong > 0) {
         _currentSong -= 1;
+        
+        [self xz_playWithURL: _playLists[_currentSong]];
+    }else { // 第一首
+        [self xz_pause];
     }
-    
-    [self xz_playWithURL: _playLists[_currentSong]];
+
 }
 
 /// 下一首
 - (void)xz_nextSong {
     if (_currentSong < _playLists.count - 1) {
         _currentSong += 1;
+        
+        [self xz_playWithURL: _playLists[_currentSong]];
     }
-    
-    [self xz_playWithURL: _playLists[_currentSong]];
+
 }
 
 /// 播放

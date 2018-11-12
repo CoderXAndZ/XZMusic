@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "XZMusicTool.h"
 
-@interface ViewController ()
+@interface ViewController ()<XZMusicToolDelegate>
 
 /// 当前模式
 @property (weak, nonatomic) IBOutlet UILabel *currentMode;
@@ -30,6 +30,33 @@
         [self.urls addObject: fileUrl];
     }
     
+    [XZMusicTool shared].delegate = self;
+}
+
+#pragma mark --- XZMusicToolDelegate
+- (void)xz_playerStatus:(XZPlayerStatus)stasus {
+    switch (stasus) {
+        case XZPlayerStatusReadyToPlay:{
+            NSLog(@"开始播放去掉菊花转圈");
+        }
+            break;
+        case XZPlayerStatusUnknown:{
+            NSLog(@"出现未知错误");
+        }
+            break;
+        case XZPlayerStatusFailed:{
+            NSLog(@"播放失败");
+        }
+            break;
+        case XZPlayerStatusFinished:
+        {
+            NSLog(@"播放完成，修改按钮状态");
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 /// 播放歌曲
@@ -43,10 +70,14 @@
     
 }
 
-
 /// 上一曲
 - (IBAction)lastSongAction:(UIButton *)sender {
-    [[XZMusicTool shared] xz_lastSong];
+    
+    if ([XZMusicTool shared].currentSongIdx == 0) {
+        NSLog(@"已经是第一首歌曲了");
+    }else {
+        [[XZMusicTool shared] xz_lastSong];
+    }
 }
 
 /// 下一曲
